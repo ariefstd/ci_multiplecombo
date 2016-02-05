@@ -18,7 +18,7 @@ class Wilayah extends CI_Controller
 	////////////////////////////////////////////////////////////////
 	$data['provinsi']=$this->M_wilayah->ambil_provinsi();
 	 $data['program']=$this->M_wilayah->tampil_data_acara();
-	 $data['jk']=$this->db->anggota_enum('tbl_mahasiswa','jenis_kelamin');
+	 $data['jk']=$this->db->anggota_enum('tbl_pelanggan','jenis_kelamin');
 	$this->load->view('v_tambah',$data);
 	}
 	
@@ -29,7 +29,7 @@ class Wilayah extends CI_Controller
 	 $data['provinsi']=$this->M_wilayah->ambil_provinsi();	
 	 //$data['program_studi']=$this->db->anggota_enum('tbl_mahasiswa','program_studi');
 	 $data['program']=$this->M_wilayah->tampil_data_acara();
-	 $data['jk']=$this->db->anggota_enum('tbl_mahasiswa','jenis_kelamin');
+	 $data['jk']=$this->db->anggota_enum('tbl_pelanggan','jenis_kelamin');
 	 $this->load->view('v_tambah',$data);	
 	 
 		if($this->form_validation->run() == TRUE){
