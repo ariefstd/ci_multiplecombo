@@ -22,8 +22,16 @@ var $tabel_kelurahan='kelurahan';
 				return $sql_query->result_array();
 			}		
 	}	
-	
+
 	public function tampil_data_pelanggan() {
+	$sql_query=$this->db->query("SELECT *,`tbl_paket_acara`.`nama_paket` AS `paket`,`tbl_band`.`nama_band` AS `band` FROM `tbl_pelanggan` INNER JOIN `tbl_paket_acara` ON `tbl_paket_acara`.`id` = `tbl_pelanggan`.`kd_program`
+  INNER JOIN `tbl_band` ON `tbl_band`.`id` = `tbl_paket_acara`.`kode_band`;");	
+			if($sql_query->num_rows()>0){
+				return $sql_query->result_array();
+			}
+	}	
+
+	public function tampil_data_pelanggan_lama() {
 	$sql_query=$this->db->get($this->tabel_pelanggan);	
 			if($sql_query->num_rows()>0){
 				return $sql_query->result_array();

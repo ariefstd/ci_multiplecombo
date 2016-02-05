@@ -13,21 +13,12 @@
   <body>
 	  <br/>
 <div class="container">
-		
-	<nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-        <div class="navbar-header">
-<h4 style="color:#FFFFFF;font-weight:bold;"><span class="glyphicon glyphicon-fire"></span>&nbsp;Combo selected CodeIgniter V. 3.1.0</h4>
-			</div>
-		</div>
-	</nav>
-
 
 <div class="panel panel-primary">
 	<div class="panel-heading"><span class="glyphicon glyphicon-th-list"></span>&nbsp;<b>Daftar baru</b></div>
 		<div class="panel-body">
         <p>Untuk menmabah  data baru klik pada tombol dibawah ini !</p>
-        <p><a href="<?php echo base_url();?>wilayah/tambah/">
+        <p><a href="<?php echo base_url();?>tambah/">
 			<button type="button" class="btn btn-sm btn-primary">
 			<span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Tambah</button>
 			</a>
@@ -53,13 +44,15 @@ $this->table->set_heading('No.','OID','Nama pelanggan','Jenis Kelamin','Tahun la
 if(isset($pelanggan)){
 	foreach($pelanggan as $data_pelanggan){
 		$no++;
+		$paketnya=$data_pelanggan['band'].", ".$data_pelanggan['paket'];
 		$this->table->add_row(
-		$no,
+		$no,		
 		$data_pelanggan['oid'],
 		$data_pelanggan['nama_pelanggan'],
 		$data_pelanggan['jenis_kelamin'],
 		$data_pelanggan['tahun_daftar'],
-		$data_pelanggan['program_pilihan']);
+		$paketnya);
+		//$data_pelanggan['program_pilihan']);
 	}
 }
 echo $this->table->generate();

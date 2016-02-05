@@ -21,7 +21,7 @@
 	echo validation_errors();
 	      ?></p>
       
-		<form role="form" class="form-horizontal" method="POST" role="form" class="form-horizontal" action="<?php echo base_url();?>wilayah/tambah/">
+		<form role="form" class="form-horizontal" method="POST" role="form" class="form-horizontal" action="<?php echo base_url();?>tambah/">
 		<div class="form-group">
 
          <label for="oid" class="control-label col-sm-3">Nomor OID</label>
@@ -133,6 +133,12 @@
 			?>
 			</div>
 			<div class="col-sm-1"><button type="text" class="btn btn-primary btn-sm">Simpan</button></div>
+        	<p><a href="<?php echo base_url();?>tampilkan/">
+				<button type="button" class="btn btn-sm btn-primary">
+				<span class="glyphicon= glyphicon-plus-sign="></span>&nbsp;Tampilkan</button>
+			</a>
+			</p>
+
         </div>
         
         

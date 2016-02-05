@@ -7,6 +7,11 @@ class Wilayah extends CI_Controller
 	$this->load->model('M_wilayah','',TRUE);	
 	}	
 
+	public function tampilkan(){
+		$data['pelanggan']=$this->M_wilayah->tampil_data_pelanggan();
+		$this->load->view('v_tampil',$data);			
+	}
+
 	public function index() {
 	//$data['pelanggan']=$this->M_wilayah->tampil_data_pelanggan();
 	//$this->load->view('v_tampil',$data);	
@@ -29,7 +34,9 @@ class Wilayah extends CI_Controller
 	 
 		if($this->form_validation->run() == TRUE){
 		 $this->M_wilayah->simpan();
-		 redirect(base_url(),'refresh');		 
+		 //redirect(base_url(),'refresh');	
+		 $data['pelanggan']=$this->M_wilayah->tampil_data_pelanggan();
+		 redirect('tampilkan',$data);		 
 		}	 
 	 
 	 }	

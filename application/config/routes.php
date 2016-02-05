@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "wilayah"; // file controller user nya dsimpan dalam folder koperasi
 $route['404_override'] = '';
+$route['tampilkan'] = 'wilayah/tampilkan';
+$route['tambah'] = 'wilayah/tambah';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
